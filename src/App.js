@@ -9,12 +9,9 @@ class App extends Component {
     super(props);
     this.state = {
       users: [],
-      selected_user: {}
+      selected_user_index: 0,
+      selected_user: null
     }
-  }
-
-  addUser(user){
-    
   }
 
   render() {
@@ -25,19 +22,13 @@ class App extends Component {
             let current_users = this.state.users;
             current_users.push(user);
             this.setState({...current_users}, () => { console.log(this.state.users) });
-
+          }}
+          selectUserIndex={(index) => {
+            this.setState({selected_user: this.state.users[index]}, () => console.log(this.state.selected_user.name));
           }}
           users={this.state.users}
         />
-        <TasksTable
-          addTask={(task) => { 
-            let current_user_tasks = this.state.selected_user.tasks;
-            current_user_tasks.push(task);
-          //this.setState({...current_user_taks}, () => { console.log(this.state.users) });
-
-        }}
-        tasks={this.state.selected_user.tasks}
-      />
+        
       </div>
     );
   }

@@ -36,6 +36,14 @@ tbody {
 	border: 1px solid black;
 }
 
+.user:hover {
+	background: grey
+}
+
+.user.clicked {
+	background: darkgreen;
+}
+
 tr, th {
 	width: 300px;
 	border: 1px solid gray;
