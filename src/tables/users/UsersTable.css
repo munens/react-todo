@@ -1,0 +1,56 @@
+.users-table-frame {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  width: 800px;
+}
+
+tbody {
+	width: 300px;
+}
+
+.name-input {
+	padding-left: 8px;
+	height: 23px;
+	width: 80%;
+}
+
+.new-user {
+	
+}
+
+.new-user-group {
+	display: flex;
+}
+
+.users-table {
+  border: 1px solid black;
+}
+
+.new-user-row {
+	border: 1px solid gray;
+}
+
+.user {
+	text-align: center;
+	border: 1px solid black;
+}
+
+tr, th {
+	width: 300px;
+	border: 1px solid gray;
+}
+
+.btn-new-user {
+	margin-left:2px;
+	height: 29px;
+	width: 15%;
+}
+	
+.btn-add {
+	height: 29px;
+}
+
+.error-msg {
+
+}

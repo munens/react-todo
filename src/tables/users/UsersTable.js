@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import User from './User';
 import NewUser from './NewUser';
+import './UsersTable.css';
 
 class UsersTable extends Component {
 	constructor(props){
@@ -12,15 +13,15 @@ class UsersTable extends Component {
 
 	render(){
 		return (
-			<div className="users-table">
-				<table>
+			<div className="users-table-frame">
+				<table className="users-table">
 					<thead>
 						<tr>
 							<th>Users</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						<tr className="new-user-row">
 							<td>
 								<NewUser addUser={(name) => this.props.addUser({name: name, tasks: []}) } />
 							</td>
@@ -28,8 +29,8 @@ class UsersTable extends Component {
 						{this.props.users.length > 0 &&
 							this.props.users.map((user, index) => {
 								return (
-									<tr key={index}>
-										<td>
+									<tr key={index} >
+										<td >
 											<User user={user} />
 										</td>
 									</tr>

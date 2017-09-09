@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './UsersTable.css';
 
 class NewUser extends Component {
 	constructor(props){
@@ -14,19 +15,20 @@ class NewUser extends Component {
 			<div>
 				{!this.state.input_on && 
 					<div>
-						<button onClick={(event) => { event.preventDefault(); this.setState({input_on: true}); }}>+</button>
+						<button className="btn-add" onClick={(event) => { event.preventDefault(); this.setState({input_on: true}); }}>+</button>
 					</div>
 				}
 				{this.state.input_on &&
-					<div>
-						<div>
-							<input placeholder="what is your name? e.g. Bob" type="text" onKeyUp={(event) => { this.setState({name: event.target.value}); }} />
+					<div className="new-user">
+						<div className="new-user-group">
+							<input className="name-input" placeholder="What is your name? e.g. Bob" type="text" onKeyUp={(event) => { this.setState({name: event.target.value}); }} />
 							<button 
+								className="btn-new-user"
 								onClick={(event) => { 
 									event.preventDefault();
 									if(this.state.name !== "") {
 										this.props.addUser(this.state.name); 
-										this.setState({input_on: false, empty_name: false}); 
+										this.setState({name: "", input_on: false, empty_name: false}); 
 									} else {
 										this.setState({empty_name: true});
 									}
@@ -34,7 +36,7 @@ class NewUser extends Component {
 							</button>
 						</div>
 						{this.state.empty_name &&
-							<p>You have not given a name</p>
+							<p className="error-msg">You have not given a name</p>
 						}
 					</div>
 				}

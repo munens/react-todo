@@ -19,9 +19,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          
-        </div>
         <UsersTable
           addUser={(user) => { 
             let current_users = this.state.users;
