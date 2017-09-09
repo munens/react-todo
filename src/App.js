@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import UsersTable from './tables/users/UsersTable.js';
 import './App.css';
 
 class App extends Component {
@@ -6,7 +7,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      users: []
+      users: [],
+      selected_user: {}
     }
   }
 
@@ -20,9 +22,9 @@ class App extends Component {
         <div className="App-header">
           
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <UsersTable 
+          users={this.state.users}
+        />
       </div>
     );
   }
