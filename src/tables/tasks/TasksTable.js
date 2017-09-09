@@ -22,10 +22,10 @@ class TasksTable extends Component {
 						</tr>
 					</thead>
 					<tbody>
-						{this.props.selected_user_index != null &&
+						{this.props.selected_user &&
 							<tr className="new-task-row">
 								<td>
-									<NewTask addTask={(task) => this.props.addTask({detail: task, completion: false, date: Date.now() }) } />
+									<NewTask addTask={(task) => this.props.addTask({name: this.props.selected_user.name, detail: task, completion: false, date: Date.now() }) } />
 								</td>
 							</tr>
 						}
