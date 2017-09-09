@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import UsersTable from './tables/users/UsersTable.js';
 import TasksTable from './tables/tasks/TasksTable.js';
-import UserTasksTable from './tables/user_tasks/UsersTasksTable.js';
+import UserTasksTable from './tables/user_tasks/UserTasksTable.js';
 import './App.css';
 
 class App extends Component {
@@ -31,7 +31,7 @@ class App extends Component {
             users={this.state.users}
           />
           <TasksTable
-            selected_user={this.state.selected_user}
+            selected_user_index={this.state.selected_user_index}
             addTask={(task) => {
               let current_users = this.state.users;
               let current_selected_user = this.state.selected_user;
