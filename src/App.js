@@ -30,7 +30,7 @@ class App extends Component {
             users={this.state.users}
           />
           <TasksTable
-            selected_user_index={this.state.selected_user_index}
+            selected_user={this.state.selected_user}
             addTask={(task) => {
               let current_users = this.state.users;
               let current_selected_user = this.state.selected_user;
@@ -38,7 +38,6 @@ class App extends Component {
               current_users[this.state.selected_user_index] = current_selected_user
               this.setState({...current_users, ...current_selected_user }, () => console.log(this.state));
             }}
-            tasks={this.state.selected_user.tasks}
           />
         </div>
         
