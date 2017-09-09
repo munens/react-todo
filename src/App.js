@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UsersTable from './tables/users/UsersTable.js';
+import TasksTable from './tables/tasks/TasksTable.js';
 import './App.css';
 
 class App extends Component {
@@ -28,6 +29,15 @@ class App extends Component {
           }}
           users={this.state.users}
         />
+        <TasksTable
+          addTask={(task) => { 
+            let current_user_tasks = this.state.selected_user.tasks;
+            current_user_tasks.push(task);
+          //this.setState({...current_user_taks}, () => { console.log(this.state.users) });
+
+        }}
+        tasks={this.state.selected_user.tasks}
+      />
       </div>
     );
   }

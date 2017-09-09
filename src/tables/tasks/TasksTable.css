@@ -1,0 +1,56 @@
+.tasks-table-frame {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  width: 800px;
+}
+
+tbody {
+	width: 300px;
+}
+
+.name-input {
+	padding-left: 8px;
+	height: 23px;
+	width: 80%;
+}
+
+.new-task {
+	
+}
+
+.new-task-group {
+	display: flex;
+}
+
+.tasks-table {
+  border: 1px solid black;
+}
+
+.new-task-row {
+	border: 1px solid gray;
+}
+
+.task {
+	text-align: center;
+	border: 1px solid black;
+}
+
+tr, th {
+	width: 300px;
+	border: 1px solid gray;
+}
+
+.btn-new-task {
+	margin-left:2px;
+	height: 29px;
+	width: 15%;
+}
+	
+.btn-add {
+	height: 29px;
+}
+
+.error-msg {
+
+}
