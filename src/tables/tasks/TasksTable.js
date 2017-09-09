@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import Task from './Task';
+import TaskItem from './TaskItem';
 import NewTask from './NewTask';
 import './TasksTable.css';
 
@@ -13,6 +13,7 @@ class TasksTable extends Component {
 	}
 
 	render(){
+		const selected_user = this.props.selected_user;
 		return (
 			<div className="tasks-table-frame">
 				<table className="tasks-table">
@@ -22,19 +23,26 @@ class TasksTable extends Component {
 						</tr>
 					</thead>
 					<tbody>
-						{this.props.selected_user_index != null &&
+						{selected_user != null &&
 							<tr className="new-task-row">
 								<td>
-									<NewTask addTask={(task) => this.props.addTask({detail: task, completion: false, date: Date.now() }) } />
+									<NewTask addTask={(detail) => this.props.addTask({name: selected_user.name, detail: detail, completion: false, date: Date.now() }) } />
 								</td>
 							</tr>
 						}
-						{this.props.tasks && this.props.tasks.length > 0 &&
-							this.props.tasks.map((task, index) => {
+						{selected_user && selected_user.tasks && selected_user.tasks.length > 0 &&
+							selected_user.tasks.map((task, index) => {
 								return (
 									<tr key={index} >
 										<td>
-											<Task task={task} />
+											<TaskItem
+												uncompleteTask={this.props.uncompleteTask}
+												completeTask={this.props.completeTask}
+												editTask={this.props.editTask}
+												deleteTask={this.props.deleteTask}
+												index={index}
+												task={task} 
+											/>
 										</td>
 									</tr>
 								);

@@ -21,7 +21,7 @@ class NewTask extends Component {
 				{this.state.input_on &&
 					<div className="new-task">
 						<div className="new-task-group">
-							<input className="task-input" placeholder="e.g. Walk the dog this afternoon" type="text" onKeyUp={(event) => { this.setState({task: event.target.value}); }} />
+							<input className="task-input" placeholder="e.g. Walk the dog this afternoon" type="text" onChange={(event) => { this.setState({task: event.target.value}); }} />
 							<button 
 								className="btn-new-task"
 								onClick={(event) => { 
