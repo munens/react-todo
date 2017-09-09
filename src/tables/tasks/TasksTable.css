@@ -29,8 +29,22 @@ tbody {
 }
 
 .task {
-	text-align: center;
+	padding-left: 10px;
+	text-align: left;
 	border: 1px solid black;
+}
+
+.task-detail {
+	width: 80%;
+	display: inline-block;
+}
+
+.task-text {
+
+}
+
+.task-text.complete {
+	text-decoration: line-through;
 }
 
 tr, th {
@@ -46,6 +60,24 @@ tr, th {
 	
 .btn-add {
 	height: 29px;
+}
+
+.img-delete {
+	height: 20px;
+}
+
+.img-complete {
+	height: 20px;
+}
+
+.delete-btn {
+	display: inline-block;
+	width: 10%;
+}
+
+.complete-btn {
+	display: inline-block;
+	width: 10%;
 }
 
 .error-msg {

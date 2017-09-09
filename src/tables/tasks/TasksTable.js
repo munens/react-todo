@@ -23,19 +23,25 @@ class TasksTable extends Component {
 						</tr>
 					</thead>
 					<tbody>
-						{selected_user.tasks &&
+						{selected_user != null &&
 							<tr className="new-task-row">
 								<td>
-									<NewTask addTask={(task) => this.props.addTask({name: selected_user.name, detail: task, completion: false, date: Date.now() }) } />
+									<NewTask addTask={(detail) => this.props.addTask({name: selected_user.name, detail: detail, completion: false, date: Date.now() }) } />
 								</td>
 							</tr>
 						}
-						{selected_user.tasks && selected_user.tasks.length > 0 &&
+						{selected_user && selected_user.tasks && selected_user.tasks.length > 0 &&
 							selected_user.tasks.map((task, index) => {
 								return (
 									<tr key={index} >
 										<td>
-											<Task task={task} />
+											<Task
+												uncompleteTask={this.props.uncompleteTask}
+												completeTask={this.props.completeTask}
+												deleteTask={this.props.deleteTask}
+												index={index} 
+												task={task} 
+											/>
 										</td>
 									</tr>
 								);

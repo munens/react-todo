@@ -10,19 +10,24 @@ class App extends Component {
     this.state = {
       users: [],
       selected_user_index: null,
-      selected_user: {}
+      selected_user: null
     }
   }
 
+  componentDidMount(){
+    
+  }
+
   render() {
+    const users = this.state.users;
+    const selected_user = this.state.selected_user;
     return (
       <div className="App">
         <div className="tables">
           <UsersTable
             addUser={(user) => { 
-              let current_users = this.state.users;
-              current_users.push(user);
-              this.setState({...current_users}, () => { console.log(this.state.users) });
+              users.push(user);
+              this.setState({users}, () => { console.log("addUser: ", this.state) });
             }}
             selectUserIndex={(index) => {
               this.setState({selected_user: this.state.users[index], selected_user_index: index}, () => console.log(this.state));
@@ -32,11 +37,23 @@ class App extends Component {
           <TasksTable
             selected_user={this.state.selected_user}
             addTask={(task) => {
-              let current_users = this.state.users;
-              let current_selected_user = this.state.selected_user;
-              current_selected_user.tasks.push(task);
-              current_users[this.state.selected_user_index] = current_selected_user
-              this.setState({...current_users, ...current_selected_user }, () => console.log(this.state));
+              selected_user.tasks.push(task);
+              this.setState({selected_user}, () => console.log("addTask: ", this.state));
+            }}
+            uncompleteTask={(index) => {
+              //const completion_status = selected_user.tasks[index].completion
+              // completion_status ? true : false;
+              selected_user.tasks[index].completion = false;
+              this.setState({selected_user}, () => console.log("updateTask: ", this.state));
+            }} 
+            completeTask={(index) => {
+              //const completion_status = selected_user.tasks[index].completion
+              // completion_status ? true : false;
+              selected_user.tasks[index].completion = true;
+              this.setState({selected_user}, () => console.log("updateTask: ", this.state));
+            }}  
+            deleteTask={(index) => {
+
             }}
           />
         </div>
