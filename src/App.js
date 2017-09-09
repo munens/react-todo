@@ -14,10 +14,6 @@ class App extends Component {
     }
   }
 
-  componentDidMount(){
-    
-  }
-
   render() {
     const users = this.state.users;
     const selected_user = this.state.selected_user;
