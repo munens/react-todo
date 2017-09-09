@@ -1,15 +1,12 @@
 .tasks-table-frame {
-  margin-right: auto;
-  margin-left: auto;
-  display: block;
-  width: 800px;
+
 }
 
 tbody {
 	width: 300px;
 }
 
-.name-input {
+.task-input {
 	padding-left: 8px;
 	height: 23px;
 	width: 80%;

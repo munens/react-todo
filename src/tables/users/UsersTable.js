@@ -36,7 +36,7 @@ class UsersTable extends Component {
 												selected_user_index={this.state.selected_user_index}
 												selectUserIndex={(index) => {
 													this.setState({selected_user_index: index});
-													this.props.selectUserIndex(index)
+													this.props.selectUserIndex(index);
 												}}
 												user={user} 
 											/>

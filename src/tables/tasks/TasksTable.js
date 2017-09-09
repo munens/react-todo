@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import Task from './Task';
 import NewTask from './NewTask';
 import './TasksTable.css';
@@ -21,16 +22,18 @@ class TasksTable extends Component {
 						</tr>
 					</thead>
 					<tbody>
-						<tr className="new-task-row">
-							<td>
-								<NewTask addTask={(name) => this.props.addTask({name: name, tasks: []}) } />
-							</td>
-						</tr>
-						{this.props.tasks.length > 0 &&
+						{this.props.selected_user_index != null &&
+							<tr className="new-task-row">
+								<td>
+									<NewTask addTask={(task) => this.props.addTask({detail: task, completion: false, date: Date.now() }) } />
+								</td>
+							</tr>
+						}
+						{this.props.tasks && this.props.tasks.length > 0 &&
 							this.props.tasks.map((task, index) => {
 								return (
 									<tr key={index} >
-										<td >
+										<td>
 											<Task task={task} />
 										</td>
 									</tr>

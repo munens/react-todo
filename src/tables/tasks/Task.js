@@ -6,7 +6,7 @@ class Task extends Component {
 	render(){
 		return(
 			<div className="task">
-				<p>{this.props.task.name}</p>
+				<p>{this.props.task.detail}</p>
 			</div>
 		)
 	}

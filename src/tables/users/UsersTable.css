@@ -1,8 +1,5 @@
 .users-table-frame {
-  margin-right: auto;
-  margin-left: auto;
-  display: block;
-  width: 800px;
+
 }
 
 tbody {
@@ -62,3 +59,5 @@ tr, th {
 .error-msg {
 
 }
+
+

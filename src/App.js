@@ -9,25 +9,39 @@ class App extends Component {
     super(props);
     this.state = {
       users: [],
-      selected_user_index: 0,
-      selected_user: null
+      selected_user_index: null,
+      selected_user: {}
     }
   }
 
   render() {
     return (
       <div className="App">
-        <UsersTable
-          addUser={(user) => { 
-            let current_users = this.state.users;
-            current_users.push(user);
-            this.setState({...current_users}, () => { console.log(this.state.users) });
-          }}
-          selectUserIndex={(index) => {
-            this.setState({selected_user: this.state.users[index]}, () => console.log(this.state.selected_user.name));
-          }}
-          users={this.state.users}
-        />
+        <div className="tables">
+          <UsersTable
+            addUser={(user) => { 
+              let current_users = this.state.users;
+              current_users.push(user);
+              this.setState({...current_users}, () => { console.log(this.state.users) });
+            }}
+            selectUserIndex={(index) => {
+              this.setState({selected_user: this.state.users[index], selected_user_index: index}, () => console.log(this.state));
+            }}
+            users={this.state.users}
+          />
+          <TasksTable
+            selected_user_index={this.state.selected_user_index}
+            addTask={(task) => {
+              let current_users = this.state.users;
+              let current_selected_user = this.state.selected_user;
+              current_selected_user.tasks.push(task);
+              current_users[this.state.selected_user_index] = current_selected_user
+              this.setState({...current_users, ...current_selected_user }, () => console.log(this.state));
+            }}
+            tasks={this.state.selected_user.tasks}
+          />
+        </div>
+        
         
       </div>
     );

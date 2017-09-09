@@ -21,13 +21,13 @@ class NewTask extends Component {
 				{this.state.input_on &&
 					<div className="new-task">
 						<div className="new-task-group">
-							<input className="name-input" placeholder="e.g. Walk the dog this afternoon" type="text" onKeyUp={(event) => { this.setState({name: event.target.value}); }} />
+							<input className="task-input" placeholder="e.g. Walk the dog this afternoon" type="text" onKeyUp={(event) => { this.setState({task: event.target.value}); }} />
 							<button 
 								className="btn-new-task"
 								onClick={(event) => { 
 									event.preventDefault();
-									if(this.state.name !== "") {
-										this.props.addUser(this.state.name); 
+									if(this.state.task !== "") {
+										this.props.addTask(this.state.task); 
 										this.setState({task: "", input_on: false, empty_task: false}); 
 									} else {
 										this.setState({empty_task: true});
@@ -35,7 +35,7 @@ class NewTask extends Component {
 								}}>add
 							</button>
 						</div>
-						{this.state.empty_name &&
+						{this.state.empty_task &&
 							<p className="error-msg">You have not given a task</p>
 						}
 					</div>
