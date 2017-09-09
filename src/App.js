@@ -22,7 +22,13 @@ class App extends Component {
         <div className="App-header">
           
         </div>
-        <UsersTable 
+        <UsersTable
+          addUser={(user) => { 
+            let current_users = this.state.users;
+            current_users.push(user);
+            this.setState({...current_users}, () => { console.log(this.state.users) });
+
+          }}
           users={this.state.users}
         />
       </div>
