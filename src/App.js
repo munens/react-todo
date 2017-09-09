@@ -51,9 +51,15 @@ class App extends Component {
               // completion_status ? true : false;
               selected_user.tasks[index].completion = true;
               this.setState({selected_user}, () => console.log("updateTask: ", this.state));
+            }}
+            editTask={(index, detail) => {
+              selected_user.tasks[index].detail = detail;
+              selected_user.tasks[index].date = Date.now();
+              this.setState({selected_user}, () => console.log("updateTask: ", this.state));
             }}  
             deleteTask={(index) => {
-
+              selected_user.tasks.splice(index, 1);
+              this.setState({selected_user}, () => console.log("deleteTask: ", this.state));
             }}
           />
         </div>

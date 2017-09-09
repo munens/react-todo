@@ -20,6 +20,14 @@ tbody {
 	display: flex;
 }
 
+.edit-task {
+	
+}
+
+.edit-task-group {
+	display: flex;
+}
+
 .tasks-table {
   border: 1px solid black;
 }
@@ -35,7 +43,7 @@ tbody {
 }
 
 .task-detail {
-	width: 80%;
+	width: 70%;
 	display: inline-block;
 }
 
@@ -62,12 +70,21 @@ tr, th {
 	height: 29px;
 }
 
+.img-edit {
+	height: 20px;
+}
+
 .img-delete {
 	height: 20px;
 }
 
 .img-complete {
 	height: 20px;
+}
+
+.edit-btn {
+	display: inline-block;
+	width: 10%;
 }
 
 .delete-btn {

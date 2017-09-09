@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import Task from './Task';
+import TaskItem from './TaskItem';
 import NewTask from './NewTask';
 import './TasksTable.css';
 
@@ -35,11 +35,12 @@ class TasksTable extends Component {
 								return (
 									<tr key={index} >
 										<td>
-											<Task
+											<TaskItem
 												uncompleteTask={this.props.uncompleteTask}
 												completeTask={this.props.completeTask}
+												editTask={this.props.editTask}
 												deleteTask={this.props.deleteTask}
-												index={index} 
+												index={index}
 												task={task} 
 											/>
 										</td>
