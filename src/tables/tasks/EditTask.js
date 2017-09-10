@@ -21,7 +21,7 @@ class EditTask extends Component {
 	}
 
 	componentDidMount(){
-		this.setState({detail: this.props.task.detail})
+		this.setState({detail: this.props.task.detail});
 	}
 
 	render(){

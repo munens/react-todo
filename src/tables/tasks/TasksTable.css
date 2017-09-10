@@ -43,11 +43,6 @@
 	text-decoration: line-through;
 }
 
-tr, th {
-	/* width: 300px; */
-	/* border: 1px solid gray; */
-}
-
 .btn-add {
 	height: 29px;
 }

@@ -25,7 +25,7 @@ class App extends Component {
           <button 
             onClick={(event) => {
               event.preventDefault();
-              this.setState({all_users_on: this.state.all_users_on ? false : true}, () => console.log(this.state.selected_user_index));
+              this.setState({all_users_on: this.state.all_users_on ? false : true});
             }}
             className="btn-page">
             {this.state.all_users_on ? 'Back' : 'All Tasks'}
@@ -37,35 +37,35 @@ class App extends Component {
               <UsersTable
                 addUser={(user) => { 
                   users.push(user);
-                  this.setState({users}, () => { console.log("addUser: ", this.state) });
+                  this.setState({users});
                 }}
                 selectUserIndex={(index) => {
-                  this.setState({selected_user: this.state.users[index], selected_user_index: index}, () => console.log(this.state));
+                  this.setState({selected_user: users[index], selected_user_index: index});
                 }}
                 selected_user_index={this.state.selected_user_index}
-                users={this.state.users}
+                users={users}
               />
               <TasksTable
                 selected_user={this.state.selected_user}
                 addTask={(task) => {
                   selected_user.tasks.push(task);
-                  this.setState({selected_user}, () => console.log("addTask: ", this.state));
+                  this.setState({selected_user});
                 }}
                 uncompleteTask={(index) => {
                   selected_user.tasks[index].completion = false;
-                  this.setState({selected_user}, () => console.log("updateTask: ", this.state));
+                  this.setState({selected_user});
                 }} 
                 completeTask={(index) => {;
                   selected_user.tasks[index].completion = true;
-                  this.setState({selected_user}, () => console.log("updateTask: ", this.state));
+                  this.setState({selected_user});
                 }}
                 editTask={(index, detail) => {
                   selected_user.tasks[index].detail = detail;
-                  this.setState({selected_user}, () => console.log("updateTask: ", this.state));
+                  this.setState({selected_user});
                 }}  
                 deleteTask={(index) => {
                   selected_user.tasks.splice(index, 1);
-                  this.setState({selected_user}, () => console.log("deleteTask: ", this.state));
+                  this.setState({selected_user});
                 }}
               />
             </div>
@@ -73,7 +73,7 @@ class App extends Component {
           {this.state.all_users_on &&
             <div className="all-tasks">
               <AllTasksList
-                users={this.state.users}
+                users={users}
               />
             </div>
           } 

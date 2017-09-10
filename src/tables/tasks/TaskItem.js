@@ -7,9 +7,7 @@ class TaskItem extends Component {
 
 	constructor(props){
 		super(props);
-		this.state = {
-			edit_on: false,
-		};
+		this.state = { edit_on: false };
 		this.onEditTaskClicked = this.onEditTaskClicked.bind(this);
 	}
 

@@ -10,17 +10,15 @@ class Task extends Component {
 
 	constructor(props){
 		super(props);
-		this.state = {
-			completion: false
-		}
+		this.state = { completion: false };
 	}
 
 	componentDidMount(){
-		this.setState({completion: this.props.task.completion === true ? true : false});
+		this.setState({completion: this.props.task.completion ? true : false});
 	}
 
 	componentWillReceiveProps(nextProps){
-		this.setState({completion: nextProps.task.completion === true ? true : false});
+		this.setState({completion: nextProps.task.completion ? true : false});
 	}
 
 	render(){

@@ -5,17 +5,15 @@ class User extends Component {
 	
 	constructor(props){
 		super(props);
-		this.state = {
-			user_clicked: false
-		}
+		this.state = { user_clicked: false };
 	}
 
 	componentDidMount(){
-		this.setState({user_clicked: this.props.selected_user_index === this.props.index})
+		this.setState({user_clicked: this.props.selected_user_index === this.props.index});
 	}
 
 	componentWillReceiveProps(nextProps){
-		this.setState({user_clicked: nextProps.selected_user_index === this.props.index})
+		this.setState({user_clicked: nextProps.selected_user_index === this.props.index});
 	}
 
 	render(){
