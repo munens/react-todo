@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import UsersTable from './tables/users/UsersTable.js';
 import TasksTable from './tables/tasks/TasksTable.js';
-import UserTasksTable from './tables/user_tasks/UserTasksTable.js';
+import AllTasksList from './tables/all_tasks/AllTasksList.js';
 import './App.css';
 
 class App extends Component {
@@ -62,10 +62,9 @@ class App extends Component {
         </div>
 
         <div>
-          {/*<UserTasksTable 
+          <AllTasksList
             users={this.state.users}
-            
-          />*/}
+          />
         </div>
         
         
