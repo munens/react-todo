@@ -20,26 +20,30 @@ class TaskItem extends Component {
 
 	render(){
 		return(
-			<div>
-				{this.state.edit_on &&
-					<EditTask
-						editTask={(index, detail) => { this.onEditTaskClicked(); this.props.editTask(index, detail); }}
-						index={this.props.index}
-						task={this.props.task}
-						onEditTaskClicked={this.onEditTaskClicked}
-					/>
-				}
-				{!this.state.edit_on &&
-					<Task
-						onEditTaskClicked={this.onEditTaskClicked}
-						uncompleteTask={this.props.uncompleteTask}
-						completeTask={this.props.completeTask}
-						deleteTask={this.props.deleteTask}
-						index={this.props.index}
-						task={this.props.task}
-					/>
-				}
-			</div>
+			<tr>
+				<td>
+					<div>
+						{this.state.edit_on &&
+							<EditTask
+								editTask={(index, detail) => { this.onEditTaskClicked(); this.props.editTask(index, detail); }}
+								index={this.props.index}
+								task={this.props.task}
+								onEditTaskClicked={this.onEditTaskClicked}
+							/>
+						}
+						{!this.state.edit_on &&
+							<Task
+								onEditTaskClicked={this.onEditTaskClicked}
+								uncompleteTask={this.props.uncompleteTask}
+								completeTask={this.props.completeTask}
+								deleteTask={this.props.deleteTask}
+								index={this.props.index}
+								task={this.props.task}
+							/>
+						}
+					</div>
+				</td>
+			</tr>
 		)
 	}
 }

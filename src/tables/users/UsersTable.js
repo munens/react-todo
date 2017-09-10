@@ -29,19 +29,16 @@ class UsersTable extends Component {
 						{this.props.users.length > 0 &&
 							this.props.users.map((user, index) => {
 								return (
-									<tr key={index} >
-										<td >
-											<User
-												index={index}
-												selected_user_index={this.state.selected_user_index}
-												selectUserIndex={(index) => {
-													this.setState({selected_user_index: index});
-													this.props.selectUserIndex(index);
-												}}
-												user={user} 
-											/>
-										</td>
-									</tr>
+									<User
+										key={index} 
+										index={index}
+										selected_user_index={this.state.selected_user_index}
+										selectUserIndex={(index) => {
+											this.setState({selected_user_index: index});
+											this.props.selectUserIndex(index);
+										}}
+										user={user} 
+									/>
 								);
 							})
 						}

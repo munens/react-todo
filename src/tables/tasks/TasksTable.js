@@ -7,9 +7,7 @@ import './TasksTable.css';
 class TasksTable extends Component {
 	constructor(props){
 		super(props);
-		this.state = {
-			
-		}
+		this.state = {};
 	}
 
 	render(){
@@ -33,18 +31,15 @@ class TasksTable extends Component {
 						{selected_user && selected_user.tasks && selected_user.tasks.length > 0 &&
 							selected_user.tasks.map((task, index) => {
 								return (
-									<tr key={index} >
-										<td>
-											<TaskItem
-												uncompleteTask={this.props.uncompleteTask}
-												completeTask={this.props.completeTask}
-												editTask={this.props.editTask}
-												deleteTask={this.props.deleteTask}
-												index={index}
-												task={task} 
-											/>
-										</td>
-									</tr>
+									<TaskItem
+										key={index}
+										uncompleteTask={this.props.uncompleteTask}
+										completeTask={this.props.completeTask}
+										editTask={this.props.editTask}
+										deleteTask={this.props.deleteTask}
+										index={index}
+										task={task} 
+									/>	
 								);
 							})
 						}

@@ -17,6 +17,7 @@ class NewUser extends Component {
 					<div>
 						<button className="btn-add" onClick={(event) => { event.preventDefault(); this.setState({input_on: true}); }}>+</button>
 					</div>
+					
 				}
 				{this.state.input_on &&
 					<div className="new-user">

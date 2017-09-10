@@ -16,14 +16,17 @@ class User extends Component {
 
 	render(){
 		return(
-			<div 
-				className={`user ${this.state.user_clicked ? 'clicked' : ''}`}
-				onClick={(event) => {
-					this.setState({user_clicked: true}, () => { this.props.selectUserIndex(this.props.index); });
-				}}	
-			>
-				<p>{this.props.user.name}</p>
-			</div>
+			<tr>
+				<td>
+					<div 
+						className={`user ${this.state.user_clicked ? 'clicked' : ''}`}
+						onClick={(event) => {
+							this.setState({user_clicked: true}, () => { this.props.selectUserIndex(this.props.index); });
+						}}>
+						<p>{this.props.user.name}</p>
+					</div>
+				</td>
+			</tr>
 		)
 	}
 }
