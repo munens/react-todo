@@ -6,9 +6,7 @@ class Task extends Component {
 	
 	constructor(props){
 		super(props);
-		this.state = {
-			user_clicked: false
-		}
+		this.state = { user_clicked: false };
 	}
 
 	render(){

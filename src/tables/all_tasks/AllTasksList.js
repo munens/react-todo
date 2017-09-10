@@ -6,9 +6,7 @@ import './AllTasks.css';
 class AllTasksList extends Component {
 	constructor(props){
 		super(props);
-		this.state = {
-		
-		};
+		this.state = {};
 	}
 
 	render(){
@@ -23,20 +21,9 @@ class AllTasksList extends Component {
 						</tr>
 					</thead>
 					<tbody>
-						{all_user_tasks.length > 0 && all_user_tasks.length < 3 &&
-							all_user_tasks.map((task, index) => {
-								if(task.name && task.detail){
-									return (
-										<Task key={index} task={task} />
-									);
-								}
-								return (null);
-							})
-						}
-						{all_user_tasks.length >= 3 &&
+						{all_user_tasks.length > 0 &&
 							mergeSortByDate(all_user_tasks).map((task, index) => {
 								if(task.name && task.detail){
-									console.log(mergeSortByDate(all_user_tasks))
 									return (
 										<Task key={index} task={task} />
 									);
