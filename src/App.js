@@ -25,7 +25,7 @@ class App extends Component {
           <button 
             onClick={(event) => {
               event.preventDefault();
-              this.setState({all_users_on: this.state.all_users_on ? false : true});
+              this.setState({all_users_on: this.state.all_users_on ? false : true}, () => console.log(this.state.selected_user_index));
             }}
             className="btn-page">
             {this.state.all_users_on ? 'Back' : 'All Tasks'}
@@ -42,6 +42,7 @@ class App extends Component {
                 selectUserIndex={(index) => {
                   this.setState({selected_user: this.state.users[index], selected_user_index: index}, () => console.log(this.state));
                 }}
+                selected_user_index={this.state.selected_user_index}
                 users={this.state.users}
               />
               <TasksTable

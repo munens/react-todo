@@ -6,9 +6,7 @@ import './UsersTable.css';
 class UsersTable extends Component {
 	constructor(props){
 		super(props);
-		this.state = {
-			selected_user_index: null
-		}
+		this.state = {};
 	}
 
 	render(){
@@ -33,11 +31,8 @@ class UsersTable extends Component {
 									<User
 										key={index} 
 										index={index}
-										selected_user_index={this.state.selected_user_index}
-										selectUserIndex={(index) => {
-											this.setState({selected_user_index: index});
-											this.props.selectUserIndex(index);
-										}}
+										selected_user_index={this.props.selected_user_index}
+										selectUserIndex={this.props.selectUserIndex}
 										user={user} 
 									/>
 								);

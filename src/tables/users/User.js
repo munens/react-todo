@@ -10,8 +10,12 @@ class User extends Component {
 		}
 	}
 
+	componentDidMount(){
+		this.setState({user_clicked: this.props.selected_user_index === this.props.index})
+	}
+
 	componentWillReceiveProps(nextProps){
-		nextProps.selected_user_index === this.props.index ? this.setState({user_clicked: true}) : this.setState({user_clicked: false});
+		this.setState({user_clicked: nextProps.selected_user_index === this.props.index})
 	}
 
 	render(){

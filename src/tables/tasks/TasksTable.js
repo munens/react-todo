@@ -16,7 +16,7 @@ class TasksTable extends Component {
 				<table className="tasks-table">
 					<thead>
 						<tr>
-							<th className="table-header">Tasks</th>
+							<th className="table-header">{this.props.selected_user ? `${this.props.selected_user.name} 's Tasks` : 'Tasks'}</th>
 						</tr>
 					</thead>
 					<tbody>
