@@ -25,7 +25,7 @@ class App extends Component {
           <button 
             onClick={(event) => {
               event.preventDefault();
-              this.setState({all_users_on: this.state.all_users_on ? false : true})
+              this.setState({all_users_on: this.state.all_users_on ? false : true});
             }}
             className="btn-page">
             {this.state.all_users_on ? 'Back' : 'All Tasks'}
@@ -75,16 +75,8 @@ class App extends Component {
                 users={this.state.users}
               />
             </div>
-          }
-          
-          
-        </div>
-
-        <div>
-          
-        </div>
-        
-        
+          } 
+        </div> 
       </div>
     );
   }
