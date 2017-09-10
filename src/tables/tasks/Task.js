@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import deleteImg from './icons/if_Block_381636.png';
 import completeImg from './icons/if_Complete_Symbol_381607.png';
 import undoImg from './icons/if_063_Undo_183192.png';
@@ -28,9 +29,10 @@ class Task extends Component {
 			<div className="task">
 				<div className="task-detail">
 					<p className={`task-text ${completion ? 'complete' : ''}`} >{this.props.task.detail}</p>
+					<p className="task-date">{moment(this.props.task.date).format('MMMM Do YYYY, h:mm:ss a')}</p>
 				</div>
 				{!completion &&
-					<div className="edit-btn">
+					<div className="config-btn">
 						<img 
 							onClick={(event) => this.props.onEditTaskClicked()} 
 							alt="edit" 
@@ -39,7 +41,7 @@ class Task extends Component {
 						/>
 					</div>
 				}
-				<div className="delete-btn">
+				<div className="config-btn">
 					<img 
 						onClick={(event) => this.props.deleteTask(this.props.index)} 
 						alt="delete" 
@@ -47,7 +49,7 @@ class Task extends Component {
 						src={deleteImg} 
 					/>
 				</div>
-				<div className="complete-btn">
+				<div className="config-btn">
 					<img 
 						onClick={(event) => {
 							this.props.task.completion = true;

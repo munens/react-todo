@@ -14,17 +14,17 @@ class NewUser extends Component {
 		return(
 			<div>
 				{!this.state.input_on && 
-					<div>
+					<div className="add">
 						<button className="btn-add" onClick={(event) => { event.preventDefault(); this.setState({input_on: true}); }}>+</button>
+						<p className="add-text">Click '+' to add a new user</p>
 					</div>
-					
 				}
 				{this.state.input_on &&
 					<div className="new-user">
 						<div className="new-user-group">
-							<input className="name-input" placeholder="What is your name? e.g. Bob" type="text" onKeyUp={(event) => { this.setState({name: event.target.value}); }} />
+							<input className={`input ${this.state.empty_name ? 'error' : ''}`} placeholder="What is your name? e.g. Bob" type="text" onKeyUp={(event) => { this.setState({name: event.target.value}); }} />
 							<button 
-								className="btn-new-user"
+								className="btn-new"
 								onClick={(event) => { 
 									event.preventDefault();
 									if(this.state.name !== "") {
@@ -33,11 +33,18 @@ class NewUser extends Component {
 									} else {
 										this.setState({empty_name: true});
 									}
-								}}>add
+								}}>Add
+							</button>
+							<button 
+								className="btn-cancel"
+								onClick={(event) => { 
+									event.preventDefault();
+									this.setState({input_on: false}); 
+								}}>Cancel
 							</button>
 						</div>
 						{this.state.empty_name &&
-							<p className="error-msg">You have not given a name</p>
+							<p className="error-msg">You have not provided a user</p>
 						}
 					</div>
 				}

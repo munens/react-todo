@@ -43,6 +43,9 @@ class TasksTable extends Component {
 								);
 							})
 						}
+						<tr style={ selected_user === null ? {height: 330} :  {height: 300 - 30*(selected_user.tasks.length)} }>
+							<td className="empty-row"></td>
+						</tr>
 					</tbody>
 				</table>
 			</div>

@@ -19,7 +19,7 @@ class EditTask extends Component {
 			<div className="edit-task">
 				<div className="edit-task-group">
 					<input 
-						className="task-input" 
+						className="input" 
 						placeholder="e.g. Walk the dog this afternoon" 
 						value={this.state.detail} 
 						type="text" 
@@ -28,7 +28,7 @@ class EditTask extends Component {
 						}} 
 					/>
 					<button 
-						className="btn-edit-task"
+						className="btn-new"
 						onClick={(event) => { 
 							event.preventDefault();
 							if(this.state.detail !== "") {
@@ -40,7 +40,7 @@ class EditTask extends Component {
 						}}>edit
 					</button>
 					<button 
-						className="btn-edit-task"
+						className="btn-cancel"
 						onClick={(event) => { 
 							event.preventDefault();
 							this.props.onEditTaskClicked();

@@ -2,9 +2,6 @@
 	width: 650px;
 }
 
-tbody {
-	
-}
 
 .task-input {
 	padding-left: 8px;
@@ -30,7 +27,7 @@ tbody {
 
 .tasks-table {
 	width: 100%;
-  border: 1px solid black;
+
 }
 
 .new-task-row {
@@ -38,66 +35,60 @@ tbody {
 }
 
 .task {
-	padding-left: 10px;
 	text-align: left;
-	border: 1px solid black;
-}
-
-.task-detail {
-	width: 70%;
-	display: inline-block;
+	padding-left: 8px;
+	color: #545454;
 }
 
 .task-text {
-
+	font-size: 14px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 .task-text.complete {
 	text-decoration: line-through;
 }
 
-tr, th {
-	/* width: 300px; */
-	border: 1px solid gray;
+.task-detail {
+	width: 83%;
+	display: inline-block;
 }
 
-.btn-new-task {
-	margin-left:2px;
-	height: 29px;
-	width: 15%;
+.task-date {
+	margin-top: 5px;
+	margin-bottom: 0px;
+	font-size: 8px;
 }
-	
+
+tr, th {
+	/* width: 300px; */
+	/* border: 1px solid gray; */
+}
+
 .btn-add {
 	height: 29px;
 }
 
 .img-edit {
-	height: 20px;
+	height: 18px;
 }
 
 .img-delete {
-	height: 20px;
+	height: 18px;
 }
 
 .img-complete {
-	height: 20px;
+	height: 18px;
 }
 
-.edit-btn {
+.config-btn {
 	display: inline-block;
-	width: 10%;
-}
-
-.delete-btn {
-	display: inline-block;
-	width: 10%;
-}
-
-.complete-btn {
-	display: inline-block;
-	width: 10%;
-}
-
-.error-msg {
-
+	width: 22px;
+	background: #d6d3d3;
+	padding: 3px;
+	margin-right: 4px;
+	border-radius: 2px;
+	text-align: center;
+	vertical-align: super;
 }

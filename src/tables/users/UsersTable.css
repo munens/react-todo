@@ -3,26 +3,25 @@
 }
 
 tbody {
-	
+	background: #f3f3f3;
 }
 
-.name-input {
-	padding-left: 8px;
-	height: 23px;
-	width: 80%;
+.add {
+	margin: 1px;
+	padding: 3px;
 }
+
 
 .new-user {
 	
 }
 
 .new-user-group {
-	display: flex;
+	padding: 3px;
 }
 
 .users-table {
 	width: 100%;
-  border: 1px solid black;
 }
 
 .new-user-row {
@@ -30,35 +29,33 @@ tbody {
 }
 
 .user {
-	text-align: center;
-	border: 1px solid black;
+	text-align: left;
+	padding-left: 8px;
+	color: #545454;
 }
 
-.user:hover {
-	background: grey
-}
-
-.user.clicked {
-	background: darkgreen;
+.name-text {
+	font-size: 14px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 tr, th {
 	/* width: 300px; */
-	border: 1px solid gray;
+	/* border: 1px solid gray; */
 }
 
-.btn-new-user {
-	margin-left:2px;
-	height: 29px;
-	width: 15%;
-}
+
+.empty-row {
 	
-.btn-add {
-	height: 29px;
 }
 
 .error-msg {
-
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 20px;
+	font-size: 10px;
+	color: #bf5858;
 }
 
 

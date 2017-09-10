@@ -12,6 +12,7 @@ class UsersTable extends Component {
 	}
 
 	render(){
+		const users = this.props.users;
 		return (
 			<div className="users-table-frame">
 				<table className="users-table">
@@ -26,8 +27,8 @@ class UsersTable extends Component {
 								<NewUser addUser={(name) => this.props.addUser({name: name, tasks: []}) } />
 							</td>
 						</tr>
-						{this.props.users.length > 0 &&
-							this.props.users.map((user, index) => {
+						{users.length > 0 &&
+							users.map((user, index) => {
 								return (
 									<User
 										key={index} 
@@ -42,9 +43,9 @@ class UsersTable extends Component {
 								);
 							})
 						}
-						{/*this.props.users.length === 0 &&
-							<p>Click on '+' above to add a new user :)</p>
-						*/}
+						<tr style={users.length > 0 ? {height: 300 - 30*(users.length)} : {height: 300}}>
+							<td className="empty-row"></td>
+						</tr>
 					</tbody>
 				</table>
 			</div>

@@ -21,7 +21,7 @@ class TaskItem extends Component {
 	render(){
 		return(
 			<tr>
-				<td>
+				<td className={`row task ${this.state.user_clicked ? 'clicked' : ''}`}>
 					<div>
 						{this.state.edit_on &&
 							<EditTask
