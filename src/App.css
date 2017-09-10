@@ -1,15 +1,22 @@
 .App {
 	margin-left: auto;
 	margin-right: auto;
-	width: 1200px;
+	width: 950px;
 	display: block;
+}
+
+.page-option {
+	float: right;
+	margin-top: 40px;
+	margin-bottom: 50px;
+
 }
 
 .tables {
 	margin-right: auto;
   margin-left: auto;
-  
-	width: 1000px;
+	width: 100%;
+	clear: both;
 }
 
 .user-tasks {
@@ -75,6 +82,20 @@
 
 .btn-cancel:hover {
 	cursor: pointer;
+}
+
+.btn-page {
+	height: 29px;
+	width: 65px;
+	border: none;
+	border-radius: 3px;
+	display: inline-block;
+	background: #f1f1f1;
+}
+
+.btn-page:hover {
+	cursor: pointer;
+	background: #c0c0c0;
 }
 
 .btn-add {
