@@ -8,6 +8,16 @@ class EditTask extends Component {
 			detail: "",
 			empty_detail: false
 		};
+		this.onEditUserClicked = this.onEditUserClicked.bind(this);
+	}
+
+	onEditUserClicked(){
+		if(this.state.detail !== "") {
+			this.props.editTask(this.props.index, this.state.detail); 
+			this.setState({detail: "", input_on: false, empty_detail: false}); 
+		} else {
+			this.setState({empty_detail: true});
+		}
 	}
 
 	componentDidMount(){
@@ -23,21 +33,20 @@ class EditTask extends Component {
 						placeholder="e.g. Walk the dog this afternoon" 
 						value={this.state.detail} 
 						type="text" 
-						onChange={(event) => { 
-							this.setState({detail: event.target.value}); 
-						}} 
+						onChange={(event) => { this.setState({detail: event.target.value}); }}
+						onKeyPress={(event) => {
+							const code = (event.keyCode ? event.keyCode : event.which);
+							if(code === 13) { 
+								this.onEditUserClicked();
+							}
+						}}
 					/>
 					<button 
 						className="btn-new"
 						onClick={(event) => { 
 							event.preventDefault();
-							if(this.state.detail !== "") {
-								this.props.editTask(this.props.index, this.state.detail); 
-								this.setState({detail: "", input_on: false, empty_detail: false}); 
-							} else {
-								this.setState({empty_detail: true});
-							}
-						}}>edit
+							this.onEditUserClicked();
+						}}>Submit
 					</button>
 					<button 
 						className="btn-cancel"

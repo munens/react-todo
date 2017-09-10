@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 import TaskItem from './TaskItem';
 import NewTask from './NewTask';
 import './TasksTable.css';
@@ -17,14 +16,21 @@ class TasksTable extends Component {
 				<table className="tasks-table">
 					<thead>
 						<tr>
-							<th>Tasks</th>
+							<th className="table-header">Tasks</th>
 						</tr>
 					</thead>
 					<tbody>
-						{selected_user != null &&
+						{selected_user !== null &&
 							<tr className="new-task-row">
 								<td>
 									<NewTask addTask={(detail) => this.props.addTask({name: selected_user.name, detail: detail, completion: false, date: Date.now() }) } />
+								</td>
+							</tr>
+						}
+						{selected_user === null &&
+							<tr className="no-row">
+								<td>
+									<p className="no-row-msg">No tasks to show at this time. Click on a user first :)</p>
 								</td>
 							</tr>
 						}
@@ -43,8 +49,10 @@ class TasksTable extends Component {
 								);
 							})
 						}
-						<tr style={ selected_user === null ? {height: 330} :  {height: 300 - 30*(selected_user.tasks.length)} }>
-							<td className="empty-row"></td>
+						<tr style={ selected_user === null ? {height: 280} :  {height: 300 - 40*(selected_user.tasks.length)} }>
+							<td className="empty-row">
+								
+							</td>
 						</tr>
 					</tbody>
 				</table>

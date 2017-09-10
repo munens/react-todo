@@ -31,34 +31,36 @@ class Task extends Component {
 					<p className={`task-text ${completion ? 'complete' : ''}`} >{this.props.task.detail}</p>
 					<p className="task-date">{moment(this.props.task.date).format('MMMM Do YYYY, h:mm:ss a')}</p>
 				</div>
-				{!completion &&
+				<div className="config-buttons">
+					{!completion &&
+						<div className="config-btn">
+							<img 
+								onClick={(event) => this.props.onEditTaskClicked()} 
+								alt="edit" 
+								className="img-edit" 
+								src={editImg} 
+							/>
+						</div>
+					}
 					<div className="config-btn">
 						<img 
-							onClick={(event) => this.props.onEditTaskClicked()} 
-							alt="edit" 
-							className="img-edit" 
-							src={editImg} 
+							onClick={(event) => this.props.deleteTask(this.props.index)} 
+							alt="delete" 
+							className="img-delete" 
+							src={deleteImg} 
 						/>
 					</div>
-				}
-				<div className="config-btn">
-					<img 
-						onClick={(event) => this.props.deleteTask(this.props.index)} 
-						alt="delete" 
-						className="img-delete" 
-						src={deleteImg} 
-					/>
-				</div>
-				<div className="config-btn">
-					<img 
-						onClick={(event) => {
-							this.props.task.completion = true;
-							completion ? this.props.uncompleteTask(this.props.index) : this.props.completeTask(this.props.index); 
-						}}
-						alt="complete" 
-						className="img-complete" 
-						src={completion ? undoImg: completeImg} 
-					/>
+					<div className="config-btn">
+						<img 
+							onClick={(event) => {
+								this.props.task.completion = true;
+								completion ? this.props.uncompleteTask(this.props.index) : this.props.completeTask(this.props.index); 
+							}}
+							alt="complete" 
+							className="img-complete" 
+							src={completion ? undoImg: completeImg} 
+						/>
+					</div>
 				</div>
 			</div>
 		)

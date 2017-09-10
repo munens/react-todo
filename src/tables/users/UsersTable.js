@@ -18,7 +18,7 @@ class UsersTable extends Component {
 				<table className="users-table">
 					<thead>
 						<tr>
-							<th>Users</th>
+							<th className="table-header">Users</th>
 						</tr>
 					</thead>
 					<tbody>

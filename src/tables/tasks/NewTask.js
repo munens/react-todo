@@ -9,30 +9,47 @@ class NewTask extends Component {
 			detail: "",
 			empty_detail: false
 		};
+		this.onAddTaskClicked = this.onAddTaskClicked.bind(this)
 	}
+
+	onAddTaskClicked(){
+		if(this.state.detail !== "") {
+			this.props.addTask(this.state.detail); 
+			this.setState({detail: "", input_on: false, empty_detail: false}); 
+		} else {
+			this.setState({empty_detail: true});
+		}
+	}
+
 	render(){
 		return(
 			<div>
 				{!this.state.input_on && 
 					<div className="add">
 						<button className="btn-add" onClick={(event) => { event.preventDefault(); this.setState({input_on: true}); }}>+</button>
-						<p className="add-text">Click '+' to add a new task</p>
+						<p className="add-text">Click '+' to create a new task</p>
 					</div>
 				}
 				{this.state.input_on &&
 					<div className="new-task">
 						<div className="new-task-group">
-							<input className={`input ${this.state.empty_detail ? 'error' : ''}`} placeholder="e.g. Walk the dog this afternoon" type="text" onChange={(event) => { this.setState({detail: event.target.value}); }} />
+							<input 
+								className={`input ${this.state.empty_detail ? 'error' : ''}`} 
+								placeholder="e.g. Walk the dog this afternoon" 
+								type="text" 
+								onChange={(event) => { this.setState({detail: event.target.value}); }}
+								onKeyPress={(event) => {
+									const code = (event.keyCode ? event.keyCode : event.which);
+									if(code === 13) { 
+										this.onAddTaskClicked();
+									}
+								}}
+							/>
 							<button 
 								className="btn-new"
 								onClick={(event) => { 
 									event.preventDefault();
-									if(this.state.detail !== "") {
-										this.props.addTask(this.state.detail); 
-										this.setState({detail: "", input_on: false, empty_detail: false}); 
-									} else {
-										this.setState({empty_detail: true});
-									}
+									this.onAddTaskClicked();
 								}}>add
 							</button>
 							<button 

@@ -16,8 +16,10 @@
 
 .user-data, .user-header {
 	width: 30%;
+	height: 35px;
 }
 
 .task-data, .task-header {
 	width: 70%;
+	height: 35px; 
 }

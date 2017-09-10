@@ -27,17 +27,10 @@
 
 .tasks-table {
 	width: 100%;
-
 }
 
 .new-task-row {
 	border: 1px solid gray;
-}
-
-.task {
-	text-align: left;
-	padding-left: 8px;
-	color: #545454;
 }
 
 .task-text {
@@ -48,17 +41,6 @@
 
 .task-text.complete {
 	text-decoration: line-through;
-}
-
-.task-detail {
-	width: 83%;
-	display: inline-block;
-}
-
-.task-date {
-	margin-top: 5px;
-	margin-bottom: 0px;
-	font-size: 8px;
 }
 
 tr, th {
@@ -82,6 +64,11 @@ tr, th {
 	height: 18px;
 }
 
+.config-buttons {
+	display: inline-block;
+	vertical-align: super;
+}
+
 .config-btn {
 	display: inline-block;
 	width: 22px;
@@ -90,5 +77,4 @@ tr, th {
 	margin-right: 4px;
 	border-radius: 2px;
 	text-align: center;
-	vertical-align: super;
 }

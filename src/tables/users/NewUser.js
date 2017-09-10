@@ -9,7 +9,18 @@ class NewUser extends Component {
 			name: "",
 			empty_name: false
 		};
+		this.onAddUserClcked = this.onAddUserClcked.bind(this);
 	}
+
+	onAddUserClcked(){ 
+		if(this.state.name !== "") {
+			this.props.addUser(this.state.name);
+			this.setState({name: "", input_on: false, empty_name: false}); 
+		} else {
+			this.setState({empty_name: true});
+		}
+	}
+
 	render(){
 		return(
 			<div>
@@ -22,17 +33,23 @@ class NewUser extends Component {
 				{this.state.input_on &&
 					<div className="new-user">
 						<div className="new-user-group">
-							<input className={`input ${this.state.empty_name ? 'error' : ''}`} placeholder="What is your name? e.g. Bob" type="text" onKeyUp={(event) => { this.setState({name: event.target.value}); }} />
+							<input 
+								className={`input ${this.state.empty_name ? 'error' : ''}`} 
+								placeholder="What is your name? e.g. Bob" 
+								type="text" 
+								onChange={(event) => { this.setState({name: event.target.value}); }}
+								onKeyPress={(event) => {
+									const code = (event.keyCode ? event.keyCode : event.which);
+									if(code === 13) { 
+										this.onAddUserClcked();
+									}
+								}}
+							/>
 							<button 
 								className="btn-new"
 								onClick={(event) => { 
 									event.preventDefault();
-									if(this.state.name !== "") {
-										this.props.addUser(this.state.name); 
-										this.setState({name: "", input_on: false, empty_name: false}); 
-									} else {
-										this.setState({empty_name: true});
-									}
+									this.onAddUserClcked();
 								}}>Add
 							</button>
 							<button 

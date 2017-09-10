@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Task from './Task';
+import mergeSortByDate from './util';
 import './AllTasks.css';
 
 class AllTasksList extends Component {
@@ -7,7 +8,7 @@ class AllTasksList extends Component {
 		super(props);
 		this.state = {
 		
-		}
+		};
 	}
 
 	render(){
@@ -22,19 +23,34 @@ class AllTasksList extends Component {
 						</tr>
 					</thead>
 					<tbody>
-						{all_user_tasks.length > 0 &&
+						{all_user_tasks.length > 0 && all_user_tasks.length < 3 &&
 							all_user_tasks.map((task, index) => {
-								console.log(all_user_tasks)
 								if(task.name && task.detail){
 									return (
 										<Task key={index} task={task} />
 									);
 								}
+								return (null);
 							})
 						}
-						{/*this.props.users.length === 0 &&
-							<p>Click on '+' above to add a new user :)</p>
-						*/}
+						{all_user_tasks.length >= 3 &&
+							mergeSortByDate(all_user_tasks).map((task, index) => {
+								if(task.name && task.detail){
+									console.log(mergeSortByDate(all_user_tasks))
+									return (
+										<Task key={index} task={task} />
+									);
+								}
+								return (null);
+							})
+						}
+						{all_user_tasks.length === 0 &&
+							<tr className="no-row">
+								<td colSpan={2}>
+									<p className="no-row-msg">There are no tasks to show at thie time. Create one first :)</p>
+								</td>
+							</tr>
+						}
 					</tbody>
 				</table>
 			</div>

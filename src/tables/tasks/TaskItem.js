@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import Task from './Task';
 import EditTask from './EditTask';
-import deleteImg from './icons/if_Block_381636.png';
-import completeImg from './icons/if_Complete_Symbol_381607.png';
-import undoImg from './icons/if_063_Undo_183192.png';
 import './TasksTable.css';
 
 class TaskItem extends Component {

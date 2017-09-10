@@ -16,6 +16,20 @@
 	display: flex;
 	margin-top: 30px;
 }
+
+.table-header {
+	height: 30px;
+}
+
+.no-row {
+	height: 58px;
+}
+
+.no-row-msg {
+	text-align: center;
+	font-size: 13px;
+	color: #757575;
+}
 /*
 .user-row {
 	width: 30%;
@@ -108,4 +122,21 @@
 
 .row.clicked {
 	background: #cecece;
+}
+
+.task {
+	text-align: left;
+	padding-left: 8px;
+	color: #545454;
+}
+
+.task-detail {
+	width: 80%;
+	display: inline-block;
+}
+
+.task-date {
+	margin-top: 5px;
+	margin-bottom: 0px;
+	font-size: 8px;
 }
