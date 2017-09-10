@@ -1,0 +1,7 @@
+.task-text {
+	
+}
+
+.task-text.complete {
+	text-decoration: line-through;
+}

@@ -12,7 +12,6 @@ class AllTasksList extends Component {
 
 	render(){
 		const all_user_tasks = [].concat(...this.props.users.map((user, index) => { return user.tasks}));
-
 		return (
 			<div className="users-table-frame">
 				<table className="users-table">

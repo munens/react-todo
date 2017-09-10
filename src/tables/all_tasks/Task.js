@@ -10,21 +10,18 @@ class Task extends Component {
 		}
 	}
 
-	componentWillReceiveProps(nextProps){
-		
-	}
-
 	render(){
+		const task = this.props.task;
 		return(
 			<tr>
 				<td>
 					<div className={`user ${this.state.user_clicked ? 'clicked' : ''}`}>
-						<p>{this.props.task.name}</p>
+						<p>{task.name}</p>
 					</div>
 				</td>
 				<td>
-					<div className={`user ${this.state.user_clicked ? 'clicked' : ''}`}>
-						<p>{this.props.task.detail}</p>
+					<div className={`user ${this.stat ? 'clicked' : ''}`}>
+						<p className={`task-text ${task.completion ? 'complete' : ''}`}>{task.detail}</p>
 					</div>
 				</td>
 			</tr>	
