@@ -13,12 +13,12 @@ class AllTasksList extends Component {
 	render(){
 		const all_user_tasks = [].concat(...this.props.users.map((user, index) => { return user.tasks}));
 		return (
-			<div className="users-table-frame">
-				<table className="users-table">
+			<div className="all-tasks-table-frame">
+				<table className="all-tasks-table">
 					<thead>
 						<tr>
-							<th>Users</th>
-							<th>Tasks</th>
+							<th className="user-header">Users</th>
+							<th className="task-header">Tasks</th>
 						</tr>
 					</thead>
 					<tbody>

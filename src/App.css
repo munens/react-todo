@@ -1,6 +1,25 @@
+.App {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1200px;
+	display: block;
+}
+
 .tables {
 	margin-right: auto;
   margin-left: auto;
-  display: flex;
+  
 	width: 1000px;
+}
+
+.user-tasks {
+	display: flex;
+}
+/*
+.user-row {
+	width: 30%;
+}*/
+
+.all-tasks {
+	
 }

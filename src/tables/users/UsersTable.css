@@ -1,9 +1,9 @@
 .users-table-frame {
-
+	width: 300px;
 }
 
 tbody {
-	width: 300px;
+	
 }
 
 .name-input {
@@ -21,6 +21,7 @@ tbody {
 }
 
 .users-table {
+	width: 100%;
   border: 1px solid black;
 }
 
@@ -42,7 +43,7 @@ tbody {
 }
 
 tr, th {
-	width: 300px;
+	/* width: 300px; */
 	border: 1px solid gray;
 }
 

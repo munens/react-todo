@@ -5,3 +5,19 @@
 .task-text.complete {
 	text-decoration: line-through;
 }
+
+.all-tasks-table {
+	width: 100%;
+}
+
+.all-tasks-table-frame {
+	width: 100%;
+}
+
+.user-data, .user-header {
+	width: 30%;
+}
+
+.task-data, .task-header {
+	width: 70%;
+}

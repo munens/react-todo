@@ -14,12 +14,12 @@ class Task extends Component {
 		const task = this.props.task;
 		return(
 			<tr>
-				<td>
+				<td className="user-data">
 					<div className={`user ${this.state.user_clicked ? 'clicked' : ''}`}>
 						<p>{task.name}</p>
 					</div>
 				</td>
-				<td>
+				<td className="task-data">
 					<div className={`user ${this.stat ? 'clicked' : ''}`}>
 						<p className={`task-text ${task.completion ? 'complete' : ''}`}>{task.detail}</p>
 					</div>
