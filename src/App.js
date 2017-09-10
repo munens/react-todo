@@ -28,7 +28,7 @@ class App extends Component {
               this.setState({all_users_on: this.state.all_users_on ? false : true})
             }}
             className="btn-page">
-            {this.state.all_users_on ? 'Back' : 'All Users'}
+            {this.state.all_users_on ? 'Back' : 'All Tasks'}
           </button>
         </div>
         <div className="tables">
