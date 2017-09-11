@@ -2,15 +2,10 @@
 	width: 300px;
 }
 
-tbody {
-	background: #f3f3f3;
-}
-
 .add {
 	margin: 1px;
 	padding: 3px;
 }
-
 
 .new-user {
 	
@@ -38,16 +33,6 @@ tbody {
 	font-size: 14px;
 	margin-top: 0px;
 	margin-bottom: 0px;
-}
-
-tr, th {
-	/* width: 300px; */
-	/* border: 1px solid gray; */
-}
-
-
-.empty-row {
-	
 }
 
 .error-msg {

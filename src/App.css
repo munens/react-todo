@@ -12,6 +12,10 @@
 
 }
 
+tbody {
+	background: #f3f3f3;
+}
+
 .tables {
 	margin-right: auto;
   margin-left: auto;
@@ -37,10 +41,6 @@
 	font-size: 13px;
 	color: #757575;
 }
-/*
-.user-row {
-	width: 30%;
-}*/
 
 .all-tasks {
 	margin-top: 60px;
